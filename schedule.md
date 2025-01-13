@@ -37,7 +37,7 @@ Feb 5 | [ALU operations, arithmetic](lectures/lecture07-public.pdf), [alu.zip (e
 Feb 7 | [Control flow](lectures/lecture08-public.pdf), [control.zip (example code)](lectures/control.zip) | *CSAPP* 3.6 | 
 Feb 10 | [Procedures, stacks](lectures/lecture09-public.pdf), [control2.zip (example code)](lectures/control2.zip) | *CSAPP* 3.7 | 
 Feb 12 | [Arrays and structs](lectures/lecture10-public.pdf), [arraystruct.zip (example code)](lectures/arraystruct.zip) | *CSAPP* 3.8–3.9 | 
-Feb 14 | [Assembly language in class exercise](lectures/assembly-exercise-public.pdf) |  | <span class='tentative'>A2 MS1 due</span>
+Feb 14 | Assembly language in class exercise |  | <span class='tentative'>A2 MS1 due</span>
 Feb 17 | [Code and data interactions, buffer overflows](lectures/lecture11-public.pdf), [buf.zip (example code)](lectures/buf.zip) | *CSAPP* 3.10 | 
 Feb 19 | Program optimization (basic techniques): see Canvas for slides | *CSAPP* 5.1–5.8 | 
 Feb 21 | [Pipelines](lectures/lecture13-public.pdf) | <i>P&amp;H</i> 4.5–4.7 | <span class='tentative'>A2 MS2 due</span>
