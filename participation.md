@@ -46,7 +46,7 @@ know which days you have participated on.
 You will receive full credit for participation for the course if you participate
 on at least *N* - 6 days, where *N* is the number of days on which there is at
 least one clicker quiz.  *N* is usually 33. So, you are permitted to miss 6
-clicker quizzes without penalty.  This policy is intended to allow you to miss
+days of participation without penalty.  This policy is intended to allow you to miss
 class occasionally due to illness or similar reasons.
 
 If you have an accommodation from [Student Disability Services](https://studentaffairs.jhu.edu/disabilities/)
