@@ -38,4 +38,11 @@ Gradescope.
 
 ## News
 
-* **Jan 20** — Welcome back!
+* **Jan 17** — Welcome back! You will need an iClicker remote for in-class
+  peer instruction quizzes throughout the semester. You have two options:
+  1. Borrow one: fill out the form at <https://forms.gle/bFZWpFiWPGPRadwv6>
+     and pick up an iClicker either Monday, Jan 20th, between 10 am and 2 pm
+     in Malone 240A, or Tuesday, Jan 21st (times/locations TBD.)
+  2. Use your own: fill out the form at <https://forms.gle/3kYJcFmyxdsr4XuK7>
+     to register your iClicker's remote id (so we can connect your poll
+     responses to your participation grade.)
