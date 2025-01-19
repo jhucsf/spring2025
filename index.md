@@ -38,6 +38,8 @@ Gradescope.
 
 ## News
 
+* **Jan 20** — [Assignment 1](assign/assign01.html) has two milestones, due
+  Wednesday, Jan 29th and Wednesday, Feb 5th, respectively.
 * **Jan 19** — The times and location for picking up an iClicker on Tuesday,
   January 21st are now posted (see the Jan 17 entry below.)
 * **Jan 17** — Welcome back! You will need an iClicker remote for in-class

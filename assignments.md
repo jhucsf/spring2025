@@ -42,4 +42,4 @@ up an x86-64 Linux development environment. (There are a number of good options.
 
 Assignment | Type | Due
 ---------- | :--: | ---
-[Assignment 1: Big Integers](assign/assign01.html) | Pair | MS1 due TBD<br>MS2 due TBD
+[Assignment 1: Big Integers](assign/assign01.html) | Pair | MS1 due Wed, Jan 29th<br>MS2 due Wed, Feb 5th
