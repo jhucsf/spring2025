@@ -11,8 +11,8 @@ Assignment type: **Pair**, you may work with one partner
 
 # Overview
 
-In this assignment, you will implement a simple C library implementation operations
-on a 256-bit unsigned integer data type.
+In this assignment, you will implement a simple C library providing
+arithmetic operations on a 256-bit unsigned integer data type.
 
 This is a substantial assignment! We strongly recommend that you start working
 on it as early as possible, and plan to make steady progress rather than waiting
