@@ -61,7 +61,7 @@ This section covers the software you'll be using in working on programming assig
 
 For the programming assignments, you will need to use a recent x86-64 (64 bit) version of Linux.
 
-**Important**: the code you submit is required to run correctly on Ubuntu 24.04, since
+**Important**: the code you submit is required to run correctly on Ubuntu 22.04, since
 that is the version of Linux that we use in [Gradescope](https://www.gradescope.com/) autograders.
 
 Here are some options for getting your development environment set up.
@@ -71,13 +71,13 @@ to do your development work. The ugrad machines use a recent version of
 [Fedora Linux](https://fedoraproject.org/). Correctly-written
 code will work the same way on Fedora and Ubuntu.
 
-You can install [Ubuntu 24.04](https://releases.ubuntu.com/24.04/) directly on your
+You can install [Ubuntu 22.04](https://releases.ubuntu.com/22.04/) directly on your
 computer.  This is a good option if you are comfortable installing operating systems
 from installation media.
 
 On Windows 10 and Windows 11, you can use the
 [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-(WSL).  Once WSL is enabled, you can install Ubuntu 24.04 from the Microsoft Store.  Make sure that
+(WSL).  Once WSL is enabled, you can install Ubuntu 22.04 from the Microsoft Store.  Make sure that
 you install the [tools](#tools) listed below.  Using WSL is an excellent option if you are
 comfortable doing your development work inside a terminal session.
 
@@ -86,7 +86,11 @@ then (as far as we know) there aren't any good
 options for setting up a local development environment.  Virtualization won't work
 because the computer doesn't use an x86-64 CPU. However, using
 [Visual Studio Code](https://code.visualstudio.com/) connected to an SSH
-workspace which accesses your ugrad account is a good option.
+workspace which accesses your ugrad account is a good option if you
+want to use an IDE. If you are having issues using VS Code to connect
+to your ugrad account, the CS IT team has some troubleshooting advice:
+
+<https://support.cs.jhu.edu/wiki/Trouble_Logging_In_Using_VS_Code_With_Remote_SSH_Plugin>
 
 ## Valgrind
 
