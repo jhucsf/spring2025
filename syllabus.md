@@ -30,7 +30,6 @@ Head CAs:
 
 CAs:
 
-* Patrick Li <pli50@jhu.edu>
 * Alisa Yang <yyang221@jhu.edu>
 * Sofia Floody <sfloody1@jhu.edu>
 * Emma Dionne <edionne2@jhu.edu>
@@ -38,6 +37,7 @@ CAs:
 * Moe Frumkin <mfrumki1@jhu.edu>
 <!--
 * Brady Bock <bbock4@jh.edu>
+* Trevor Black <tblack20@jhu.edu>
 -->
 
 ## Meeting
