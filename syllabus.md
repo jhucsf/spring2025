@@ -37,7 +37,7 @@ CAs:
 * Rida Danish <rdanish2@jhu.edu>
 * Moe Frumkin <mfrumki1@jhu.edu>
 <!--
-More?
+* Brady Bock <bbock4@jh.edu>
 -->
 
 ## Meeting
