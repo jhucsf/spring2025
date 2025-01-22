@@ -35,10 +35,8 @@ CAs:
 * Emma Dionne <edionne2@jhu.edu>
 * Rida Danish <rdanish2@jhu.edu>
 * Moe Frumkin <mfrumki1@jhu.edu>
-<!--
 * Brady Bock <bbock4@jh.edu>
 * Trevor Black <tblack20@jhu.edu>
--->
 
 ## Meeting
 
