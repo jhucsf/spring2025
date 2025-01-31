@@ -358,6 +358,14 @@ Also note that in point 1, which describes how pixels in wedge A are replicated
 in wedge B, the pixels along the diagonal separating wedges A and B are not
 modified.
 
+As a special case, if width/height of the image is odd, meaning that
+the quadrants of the image can't be exactly the same size, the transformation
+should round up the width and height to the next larger even value, and
+"pretend" that the original image had those dimensions. For example, for a
+785x785 image, the transformation should "pretend" that it's really a
+786x786 image. You will need to take care to avoid out of bounds array accesses
+if the width and height are rounded up in this way.
+
 Example of the `kaleidoscope` transformation:
 
 Original image | Transformed image
