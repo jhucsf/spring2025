@@ -9,12 +9,12 @@ Feb 5,"ALU operations, arithmetic",lectures/lecture07-public.pdf,alu.zip,*CSAPP*
 Feb 7,"Control flow",lectures/lecture08-public.pdf,control.zip,*CSAPP* 3.6,
 Feb 10,"Procedures, stacks",lectures/lecture09-public.pdf,control2.zip,*CSAPP* 3.7,
 Feb 12,"Arrays and structs",lectures/lecture10-public.pdf,arraystruct.zip,*CSAPP* 3.8–3.9,
-Feb 14,"Assembly language in class exercise",,,,"<span class='tentative'>A2 MS1 due</span>"
+Feb 14,"Assembly language in class exercise",,,,"[A2](assign/assign02.html) MS1 due"
 Feb 17,"Code and data interactions, buffer overflows",lectures/lecture11-public.pdf,buf.zip,*CSAPP* 3.10,
 Feb 19,"Program optimization (basic techniques): see Canvas for slides",,,*CSAPP* 5.1–5.8,
-Feb 21,"Pipelines",lectures/lecture13-public.pdf,,"<i>P&amp;H</i> 4.5–4.7","<span class='tentative'>A2 MS2 due</span>"
+Feb 21,"Pipelines",lectures/lecture13-public.pdf,,"<i>P&amp;H</i> 4.5–4.7","[A2](assign/assign02.html) MS2 due"
 Feb 24,"Program optimization (ILP, memory, profiling): see Canvas for slides",,,*CSAPP* 5.9–5.14,
-Feb 26,"Memory hierarchy",lectures/lecture15-public.pdf,,*CSAPP* 6.1–6.3,"<span class='tentative'>A2 MS3 due</span>"
+Feb 26,"Memory hierarchy",lectures/lecture15-public.pdf,,*CSAPP* 6.1–6.3,"[A2](assign/assign02.html) MS3 due"
 Feb 28,"Exam 1 review session",,,,
 Mar 3,"**Exam 1** (in class)",
 Mar 5,"Cache policies",lectures/lecture16-public.pdf,,*CSAPP* 6.4,
