@@ -329,6 +329,41 @@ Compositing the two images produces the following result image
  </tr>
 </table>
 
+### The `kaleidoscope` transformation
+
+In the `kaleidoscope` transformation, which can be applied only to images
+which are square (width and height are the same), the original image is
+divided into 8 "wedges":
+
+<div class="centered">
+<a href="img/kaleidoscope_wedges.svg"><img style="width: 16em;" alt="kaleidoscope wedges diagram" src="img/kaleidoscope_wedges.svg"></a>
+</div>
+
+The transformation can be described this way:
+
+1. The pixels of the wedge labeled "A" are copied to the wedge labeled "B"
+   by swapping their horizontal and vertical coordinates; i.e., they are
+   mirrored along the diagonal separating A and B
+2. All of the other wedges are filled with copies of the pixels in A,
+   such that all pixels are mirrored along all four dividing lines
+   (horizontal, vertical, and the two diagonals)
+
+Another way to look at point 2 above is that wedges A and B describe one
+quadrant of the image (the upper left), and that each of the other quadrants
+are "reflections" of the upper left quadrant, mirrored either horizontally
+(the upper right), vertically (the lower left), or both horizontally and
+vertically (the lower right.)
+
+Also note that in point 1, which describes how pixels in wedge A are replicated
+in wedge B, the pixels along the diagonal separating wedges A and B are not
+modified.
+
+Example of the `kaleidoscope` transformation:
+
+Original image | Transformed image
+:------------: | :---------------:
+<a href="img/ingo.png"><img style="width: 20em;" alt="original cat image" src="img/ingo.png"></a> | <a href="img/ingo_kaleidoscope.png"><img style="width: 20em;" alt="kaleidoscope cat image" src="img/ingo_kaleidoscope.png"></a>
+
 ## `c_imgproc` and `asm_imgproc` programs
 
 The `c_imgproc` and `asm_imgproc` programs apply one of the image transformations

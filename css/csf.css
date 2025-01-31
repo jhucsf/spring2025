@@ -181,6 +181,10 @@ code.highlighter-rouge, .admonition p code {
   max-width: 100%;
 }
 
+.centered {
+  text-align: center;
+}
+
 dd {
   margin-bottom: 0.5em;
 }
