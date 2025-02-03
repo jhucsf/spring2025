@@ -236,6 +236,7 @@ These functions are declared in `imgproc.h`, and each one has a detailed API
 comment describing its function, the meaning of the parameters, and the
 meaning of the return value (for the non-`void` functions.)
 
+<!--
 ### The `mirror_h` transformation
 
 The `mirror_h` transformation mirrors the input image horizontally.
@@ -255,6 +256,7 @@ Example images (click for full size):
 Original image | Transformed image
 :------------: | :---------------:
 <a href="img/ingo.png"><img style="width: 20em;" alt="original cat image" src="img/ingo.png"></a> | <a href="img/ingo_mirror_v.png"><img style="width: 20em;" alt="vertically mirrored cat image" src="img/ingo_mirror_v.png"></a>
+-->
 
 ### The `grayscale` transformation
 
@@ -269,6 +271,7 @@ Original image | Transformed image
 :------------: | :---------------:
 <a href="img/ingo.png"><img style="width: 20em;" alt="original cat image" src="img/ingo.png"></a> | <a href="img/ingo_grayscale.png"><img style="width: 20em;" alt="grayscale cat image" src="img/ingo_grayscale.png"></a>
 
+<!--
 ### The `tile` transformation
 
 The `tile` transformation generates an image containing an $$n$$ x $$n$$
@@ -328,6 +331,7 @@ Compositing the two images produces the following result image
    </td>
  </tr>
 </table>
+-->
 
 ### The `fade` transformation
 
