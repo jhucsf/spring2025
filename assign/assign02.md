@@ -329,6 +329,75 @@ Compositing the two images produces the following result image
  </tr>
 </table>
 
+### The `fade` transformation
+
+In the `fade` transformation, the intensity of each pixel is modified so that
+pixels "fade out" the closer they are to the edges of the image.
+
+Example:
+
+Original image | Transformed image
+:------------: | :---------------:
+<a href="img/ingo.png"><img style="width: 20em;" alt="original cat image" src="img/ingo.png"></a> | <a href="img/ingo_kaleidoscope.png"><img style="width: 20em;" alt="faded cat image" src="img/ingo_fade.png"></a>
+
+The transformation should be implemented as follows.
+
+The *gradient* function takes a pixel row or column coordinate and
+yields a value indicating how intense the pixels at that row or column
+should be, based on their proximity to an edge of the image. It
+is defined as
+
+$$\mbox{gradient}(x,n) = 1{,}000{,}000 - (\lfloor (2{,}000{,}000 \times x) / (1{,}000{,}000 \times n) \rfloor - 1{,}000)^{2} $$
+
+where $$x$$ is the index of a pixel row or column and $$n$$ is the number of
+pixels in that row or column (i.e., the height or width of the image.)
+The result of the *gradient* function is a value between $$0$$ and $$1{,}000{,}000$$,
+where $$0$$ means that the pixel will be entirely faded (black), and
+$$1{,}000{,}000$$ means that the pixel is displayed unmodified.
+
+<div class='admonition info'>
+  <div class='title'>Explanation</div>
+  <div class='content' markdown='1'>
+The *gradient* function is mapping a pixel coordinate value to the range
+$$0..2000$$, and then selecting a value along an inverted parabola,
+so that the extreme values are 0 and the middle value is $$1{,}000{,}000$$.
+  </div>
+</div>
+
+Because each pixel has two coordinates (column and row), the transformation will
+compute two gradient values for each pixel. Let's call them $$t_{r}$$ for the
+row gradient value and $$t_{c}$$ for the column gradient value. For each
+color component value $$c$$, a modified color component value $$c'$$ should
+be computed as
+
+$$c' = \lfloor (t_{r} \times t_{c} \times c) / 1{,}000{,}000{,}000{,}000 \rfloor$$
+
+Doing this computation for each of a pixel's color component values
+(red, green, and blue) yields the color component values for the
+result pixel. (The alpha value of the original pixel should be used
+unmodified.)
+
+Note that because these computations will involve large integer values,
+you should use signed 64-bit arithmetic to implement them.
+
+<div class='admonition info'>
+  <div class='title'>Fixed-point arithmetic</div>
+  <div class='content' markdown='1'>
+Integer operations have the obvious disadvantage that fractions can't be
+represented directly, and any division that results in a quotient less than 1
+will yield the value 0. *Fixed point* arithmetic is the idea that we
+emulate fractions by making our integer values represent fractions of a whole.
+For example, if we use integer values to represent US currency with the
+interpretation that 1 represents one dollar, then we can't represent any
+amount of money less than one dollar. However, if we represent currency values
+with the interpretation that 1 represents one cent, then it is possible
+to represent fractions of one dollar with 1 cent as the precision.
+The `fade` transformation applies this idea by using the integer values
+$$0..1{,}000{,}000$$ to stand in for coefficients in the range $$0..1$$
+in order to "smoothly" fade the pixel intensities in the image.
+  </div>
+</div>
+
 ### The `kaleidoscope` transformation
 
 In the `kaleidoscope` transformation, which can be applied only to images
