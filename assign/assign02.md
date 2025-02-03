@@ -36,16 +36,30 @@ your assembly language code in Milestones 2 and 3 will implement the same
 helper functions, and your unit tests will help you gain confidence in their
 correctness.
 
-In Milestone 2, you are required to implement the [`mirror_h`](#the-mirror_h-transformation),
-[`mirror_v`](#the-mirror_v-transformation), and [`grayscale`](#the-grayscale-transformation)
+In Milestone 2, you are required to implement the
+<!--
+ [`mirror_h`](#the-mirror_h-transformation),
+[`mirror_v`](#the-mirror_v-transformation),
+-->
+[`grayscale`](#the-grayscale-transformation) and [`rgb`](#the-rgb-transformation)
 transformations in assembly language. We expect you to have comprehensive unit tests
 for the assembly language implementations of your helper functions. (In theory you can
 just use the ones you implemented in Milestone 1.)
 
-In Milestone 3, you will implement the [`composite`](#the-composite-transformation)
-and [`tile`](#the-tile-transformation) transformations. Note that the assembly
+In Milestone 3, you will implement the
+<!--
+ [`composite`](#the-composite-transformation)
+and [`tile`](#the-tile-transformation)
+-->
+[`fade`](#the-fade-transformation) and [`kaleidoscope`](#the-kaleidoscope-transformation)
+transformations.
+<!--
+ Note that the assembly
 language implementation of the tile transformation
 is quite challenging, and is worth only 3% of the assignment grade.
+-->
+TODO: say something about the difficulty and how much credit is allocated
+to these.
 
 Note that in each milestone, we expect all of the tests executed
 by your unit test program to pass. For Milestone 2 in particular, you can
@@ -174,6 +188,7 @@ The alpha value of a color represents its opacity, with 255 meaning
 [Color blending](#color-blending) section for details on how
 an alpha value allows two colors to be "blended".)
 
+<!--
 ### Color blending
 
 The color values of the output image are always fully opaque,
@@ -199,6 +214,7 @@ so if you use integer division, it will behave in the expected way.
 A blended color should have each color component value (red, green, and blue)
 computed using the formula above, and the alpha value of the blended color
 should be set to 255.
+-->
 
 ### Grayscale
 
@@ -218,6 +234,7 @@ color pixel's alpha value.
 You will implement the following image transformation functions in both
 C and assembly language:
 
+<!--
 ```c
 void imgproc_mirror_h( struct Image *input_img,
                        struct Image *output_img );
@@ -230,6 +247,15 @@ void imgproc_grayscale( struct Image *input_img,
 int imgproc_composite( struct Image *base_img,
                        struct Image *overlay_img,
                        struct Image *output_img );
+```
+-->
+
+```c
+void imgproc_grayscale( struct Image *input_img,
+                        struct Image *output_img );
+void imgproc_rgb( struct Image *input_img, struct Image *output_img );
+void imgproc_fade( struct Image *input_img, struct Image *output_img );
+int imgproc_kaleidoscope( struct Image *input_img, struct Image *output_img );
 ```
 
 These functions are declared in `imgproc.h`, and each one has a detailed API
@@ -270,6 +296,22 @@ Example images (click for full size):
 Original image | Transformed image
 :------------: | :---------------:
 <a href="img/ingo.png"><img style="width: 20em;" alt="original cat image" src="img/ingo.png"></a> | <a href="img/ingo_grayscale.png"><img style="width: 20em;" alt="grayscale cat image" src="img/ingo_grayscale.png"></a>
+
+### The `rgb` transformation
+
+The `rgb` transformation renders four copies of the original input image.
+The upper-left image is identical to the input image. The upper-right,
+lower-left, and lower-right images contain (respectively) only the
+red, green, and blue color components of the original image. The width
+and height of the output image are (respectively) twice the width
+and height of the input image, so each "quadrant" of the output image is
+the same size as the input image.
+
+Example images (click for full size):
+
+Original image | Transformed image
+:------------: | :---------------:
+<a href="img/ingo.png"><img style="width: 20em;" alt="original cat image" src="img/ingo.png"></a> | <a href="img/ingo_rgb.png"><img style="width: 20em;" alt="rgb cat image" src="img/ingo_rgb.png"></a>
 
 <!--
 ### The `tile` transformation
@@ -338,11 +380,11 @@ Compositing the two images produces the following result image
 In the `fade` transformation, the intensity of each pixel is modified so that
 pixels "fade out" the closer they are to the edges of the image.
 
-Example:
+Example images (click for full size):
 
 Original image | Transformed image
 :------------: | :---------------:
-<a href="img/ingo.png"><img style="width: 20em;" alt="original cat image" src="img/ingo.png"></a> | <a href="img/ingo_kaleidoscope.png"><img style="width: 20em;" alt="faded cat image" src="img/ingo_fade.png"></a>
+<a href="img/ingo.png"><img style="width: 20em;" alt="original cat image" src="img/ingo.png"></a> | <a href="img/ingo_fade.png"><img style="width: 20em;" alt="faded cat image" src="img/ingo_fade.png"></a>
 
 The transformation should be implemented as follows.
 
@@ -390,7 +432,7 @@ you should use signed 64-bit arithmetic to implement them.
 Integer operations have the obvious disadvantage that fractions can't be
 represented directly, and any division that results in a quotient less than 1
 will yield the value 0. *Fixed point* arithmetic is the idea that we
-emulate fractions by making our integer values represent fractions of a whole.
+emulate fractions by making our integer values represent a count of fractions of a whole.
 For example, if we use integer values to represent US currency with the
 interpretation that 1 represents one dollar, then we can't represent any
 amount of money less than one dollar. However, if we represent currency values
