@@ -38,6 +38,9 @@ Gradescope.
 
 ## News
 
+* **Feb 4** — [Assignment 2](assign/assign02.html) has three milestones,
+  due Friday, Feb 14th, Friday, Feb 21st, and Wednesday, Feb 26th,
+  respectively.
 * **Jan 20** — [Assignment 1](assign/assign01.html) has two milestones, due
   Wednesday, Jan 29th and Wednesday, Feb 5th, respectively.
 * **Jan 19** — The times and location for picking up an iClicker on Tuesday,
