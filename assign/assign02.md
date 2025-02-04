@@ -144,8 +144,8 @@ Milestone 1: 30%
 
 Milestone 2: 45%
 
-* Functional correctness of `imgproc_rgb` and `imgproc_grayscale`: 25%
-* Unit testing of helper functions: 15%
+* Functional correctness of `imgproc_rgb` and `imgproc_grayscale`: 30%
+* Unit testing of helper functions: 10%
 * Design/coding style of assembly functions: 5%
 
 Milestone 3: 25%
