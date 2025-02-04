@@ -123,6 +123,17 @@ We expect your code to be free of memory errors. You should use
 of uninitialized variables, out of bounds memory reads or writes,
 etc.  This applies to both your C code and your assembly code.
 
+<div class='admonition info'>
+  <div class='title'>Note</div>
+  <div class='content' markdown='1'>
+If any test assertions fail when you run the unit test program,
+that may lead to a memory leak due to one or more test objects
+not being freed. This situation does not count as a memory leak
+in your code. (However, you should definitely fix the bug that
+is causing the test assertion to fail.)
+  </div>
+</div>
+
 ### Grading breakdown
 
 Milestone 1: 30%
