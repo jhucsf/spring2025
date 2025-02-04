@@ -498,7 +498,7 @@ should round up the width and height to the next larger even value, and
 "pretend" that the original image had those dimensions. For example, for a
 785x785 image, the transformation should "pretend" that it's really a
 786x786 image. You will need to take care to avoid out of bounds array accesses
-if the width and height are rounded up in this way.
+if the effective width and height are rounded up in this way.
 
 Example of the `kaleidoscope` transformation:
 
