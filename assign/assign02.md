@@ -58,8 +58,6 @@ transformations.
 language implementation of the tile transformation
 is quite challenging, and is worth only 3% of the assignment grade.
 -->
-TODO: say something about the difficulty and how much credit is allocated
-to these.
 
 Note that in each milestone, we expect all of the tests executed
 by your unit test program to pass. For Milestone 2 in particular, you can
@@ -74,15 +72,14 @@ TEST( test_get_b );
 TEST( test_get_a );
 TEST( test_make_pixel );
 TEST( test_to_grayscale );
-//TEST( test_blend_components );
-//TEST( test_blend_colors );
+//TEST( test_gradient );
 ```
 
 The tests for `get_r`, `get_g`, `get_b`, `get_a`, `make_pixel`, and
 `to_grayscale` are enabled because they are all test functions involved
 in the implementations of the `grayscale` transformation, which is
-part of the requirements for MS2. The tests for `blend_components` and
-`blend_colors` are commented out because they are used in the `composite`
+part of the requirements for MS2. The test for `gradient` 
+is commented out because it is used in the `fade`
 transformation, which is not part of the requirements for MS2.
 
 ### Non-functional requirements
@@ -91,6 +88,14 @@ In Milestones 2 and 3, you will be writing assembly language functions.
 You **must** write these "by hand", and your assembly code must have
 very detailed code comments explaining the purpose of each assembly language
 instruction.
+
+<div class='admonition tip'>
+  <div class='title'>Assembly comments</div>
+  <div class='content' markdown='1'>
+A good rule of thumb is that *every* assembly language instruction
+should have a comment describing what it is intended to do.
+  </div>
+</div>
 
 It is **not** allowed to generate assembly
 code using a C compiler and submit this as your own code. We will assign
@@ -107,7 +112,7 @@ We expect you to follow the [style guidelines](style.html).
 However, the expectations for function length will be relaxed considerably
 for your assembly language code. It is not unusual for an assembly language
 function to have 100 or more lines of code. In the reference solution,
-the longest function was 115 lines, although there was extensive use of
+the longest function was about 115 lines, although there was extensive use of
 comments and whitespace to improve readability.
 
 Of course, you should strive to make your assembly language functions
@@ -128,14 +133,14 @@ Milestone 1: 30%
 
 Milestone 2: 45%
 
-* Functional correctness of `imgproc_mirror_h`, `imgproc_mirror_v`, and `imgproc_grayscale`: 25%
+* Functional correctness of `imgproc_rgb` and `imgproc_grayscale`: 25%
 * Unit testing of helper functions: 15%
 * Design/coding style of assembly functions: 5%
 
 Milestone 3: 25%
 
-* Functional correctness of `imgproc_composite`: 17%
-* Functional correctness of `imgproc_tile`: 3%
+* Functional correctness of `imgproc_fade`: 10%
+* Functional correctness of `imgproc_kaleidoscope`: 10%
 * Design/coding style of assembly functions: 5%
 
 ## Getting started
@@ -184,9 +189,12 @@ A color is represented by a `uint32_t` value as follows:
 This pixel data format is known as "RGBA".
 
 The alpha value of a color represents its opacity, with 255 meaning
-"fully opaque" and 0 meaning "fully transparent". (See the
-[Color blending](#color-blending) section for details on how
+"fully opaque" and 0 meaning "fully transparent".
+
+<!--
+(See the [Color blending](#color-blending) section for details on how
 an alpha value allows two colors to be "blended".)
+-->
 
 <!--
 ### Color blending
@@ -498,8 +506,14 @@ implements both of these programs. The only difference between `c_imgproc` and
 
 To run these programs:
 
+<!--
 <div class='highlighter-rouge'><pre><code>./c_imgproc <i>transformation</i> <i>input.png</i> <i>output.png</i> [<i>argument</i>]
 ./asm_imgproc <i>transformation</i> <i>input.png</i> <i>output.png</i> [<i>argument</i>]
+</code></pre></div>
+-->
+
+<div class='highlighter-rouge'><pre><code>./c_imgproc <i>transformation</i> <i>input.png</i> <i>output.png</i>
+./asm_imgproc <i>transformation</i> <i>input.png</i> <i>output.png</i>
 </code></pre></div>
 
 In these commands:
@@ -510,21 +524,25 @@ In these commands:
   image file
 * <code class='highlighter-rouge'><i>output.png</i></code> is the name of the output
   image file to write
+
+<!--
 * <code class='highlighter-rouge'>[<i>argument</i>]</code> is the
   argument needed by the transformation, if any (the tiling factor for the
   `tile` transformation, and the overlay image filename for the `composite`
   transformation)
+-->
 
-For example, to run the `mirror_h` transformation using the `c_imgproc` program:
+For example, to run the `rgb` transformation using the `c_imgproc` program:
 
 ```text
 mkdir -p actual
-./c_imgproc mirror_h input/ingo.png actual/c_ingo_mirror_h.png
+./c_imgproc rgb input/ingo.png actual/c_ingo_rgb.png
 ```
 
-The above commands would apply the `mirror_h` transformation on the input image
-`input/ingo.png` to produce the output image file `actual/c_ingo_mirror_h.png`.
+The commands in this example would apply the `rgb` transformation on the input image
+`input/ingo.png` to produce the output image file `actual/c_ingo_rgb.png`.
 
+<!--
 Another example:
 
 ```text
@@ -536,6 +554,7 @@ mkdir -p actual
 This second example runs the `composite` transformation using `input/kittens.png` as
 the base image, `input/dice.png` as the overlay image, and generates the output
 image file `actual/c_kittens_composite_dice.png`.
+-->
 
 ## Unit tests, helper functions
 
@@ -561,7 +580,7 @@ Milestones 2 and 3.
 You are free to implement whatever helper functions make sense. The reference
 implementation defined the following helper functions:
 
-```c
+<!--
 int all_tiles_nonempty( int width, int height, int n );
 int determine_tile_w( int width, int n, int tile_col );
 int determine_tile_x_offset( int width, int n, int tile_col );
@@ -569,14 +588,19 @@ int determine_tile_h( int height, int n, int tile_row );
 int determine_tile_y_offset( int height, int n, int tile_row );
 void copy_tile( struct Image *out_img, struct Image *img,
                 int tile_row, int tile_col, int n );
+uint32_t blend_components( uint32_t fg, uint32_t bg, uint32_t alpha );
+uint32_t blend_colors( uint32_t fg, uint32_t bg );
+-->
+
+```c
 uint32_t get_r( uint32_t pixel );
 uint32_t get_g( uint32_t pixel );
 uint32_t get_b( uint32_t pixel );
 uint32_t get_a( uint32_t pixel );
 uint32_t make_pixel( uint32_t r, uint32_t g, uint32_t b, uint32_t a );
 uint32_t to_grayscale( uint32_t pixel );
-uint32_t blend_components( uint32_t fg, uint32_t bg, uint32_t alpha );
-uint32_t blend_colors( uint32_t fg, uint32_t bg );
+int64_t gradient( int64_t x, int64_t max );
+int32_t compute_index( struct Image *img, int32_t col, int32_t row );
 ```
 
 ## Image tests
@@ -585,8 +609,11 @@ The provided script `run_all.sh` runs your `c_imgproc` or `asm_imgproc` program
 on some example input images and checks whether a correct output image
 is produced. To run it:
 
-```
-./run_all.sh
+```bash
+# test the C implementations of the image transformations
+./run_all.sh c
+# test the assembly implementations of the image transformations
+./run_all.sh asm
 ```
 
 ## Hints and tips
@@ -661,27 +688,19 @@ just to ensure that `%rsp` is aligned correctly.
 We *strongly* recommend that you have a comment in each function explaining
 how it uses callee-saved registers and stack memory, since these are
 the equivalent of local variables in assembly code. For example,
-here is a comment taken from the implementation of the `copy_tile`
-helper function in the reference solution:
+here is a comment taken from the implementation of the `imgproc_grayscale`
+function in the reference solution:
 
 <a name='register-memory-comment'>
 
-```
+```c
 /*
  * Register use:
- *   %r12 - pointer to output Image
- *   %r13 - pointer to source Image
- *   %r14d - tiling factor
- *   %r15d - tile pixel row
- *   %ebx - tile pixel column
- *
- * Memory use:
- *   -4(%rbp) - tile row index
- *   -8(%rbp) - tile column index
- *   -12(%rbp) - tile_w
- *   -16(%rbp) - tile_x_off
- *   -20(%rbp) - tile_h
- *   -24(%rbp) - tile_y_off
+ *   %r12 - pointer to original image
+ *   %r13 - pointer to output image
+ *   %r14d - i (pixel row index)
+ *   %r15d - j (pixel column index)
+ *   %ebx - index into data array
  */
 ```
 
