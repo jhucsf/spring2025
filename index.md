@@ -38,6 +38,9 @@ Gradescope.
 
 ## News
 
+* **Feb 6** — [Assignment 2](assign/assign02.html) has been updated to
+  correct an error in the formula for the gradient function in
+  [the `fade` transformation](assign/assign02.html#the-fade-transformation).
 * **Feb 4** — [Assignment 2](assign/assign02.html) has three milestones,
   due Friday, Feb 14th, Friday, Feb 21st, and Wednesday, Feb 26th,
   respectively.

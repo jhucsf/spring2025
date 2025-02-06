@@ -9,6 +9,9 @@ title: "Assignment 2: Image Processing"
 * Milestone 2 due **Friday, Feb 21st** by 11 pm
 * Milestone 3 due **Wednesday, Feb 26th** by 11 pm
 
+*Update 2/6*: Corrected an error in the formula for the
+gradient function in [the `fade` transformation](#the-fade-transformation).
+
 This is a **pair** assignment, so you may work with one partner.
 
 <div class='admonition danger'>
@@ -412,7 +415,7 @@ yields a value indicating how intense the pixels at that row or column
 should be, based on their proximity to an edge of the image. It
 is defined as
 
-$$\mbox{gradient}(x,n) = 1{,}000{,}000 - (\lfloor (2{,}000{,}000 \times x) / (1{,}000{,}000 \times n) \rfloor - 1{,}000)^{2} $$
+$$\mbox{gradient}(x,n) = 1{,}000{,}000 - (\lfloor (2{,}000{,}000{,}000 \times x) / (1{,}000{,}000 \times n) \rfloor - 1{,}000)^{2} $$
 
 where $$x$$ is the index of a pixel row or column and $$n$$ is the number of
 pixels in that row or column (i.e., the height or width of the image.)
