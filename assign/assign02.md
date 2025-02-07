@@ -12,6 +12,9 @@ title: "Assignment 2: Image Processing"
 *Update 2/6*: Corrected an error in the formula for the
 gradient function in [the `fade` transformation](#the-fade-transformation).
 
+*Update 2/7*: Improved example of a [comment to show register use and
+layout of variables in the stack frame](#register-memory-comment).
+
 This is a **pair** assignment, so you may work with one partner.
 
 <div class='admonition danger'>
@@ -702,7 +705,7 @@ just to ensure that `%rsp` is aligned correctly.
 We *strongly* recommend that you have a comment in each function explaining
 how it uses callee-saved registers and stack memory, since these are
 the equivalent of local variables in assembly code. For example,
-here is a comment taken from the implementation of the `imgproc_grayscale`
+here is a comment taken from the implementation of the `imgproc_fade`
 function in the reference solution:
 
 <a name='register-memory-comment'>
@@ -710,11 +713,20 @@ function in the reference solution:
 ```c
 /*
  * Register use:
- *   %r12 - pointer to original image
- *   %r13 - pointer to output image
- *   %r14d - i (pixel row index)
- *   %r15d - j (pixel column index)
- *   %ebx - index into data array
+ *   %r12d - i (pixel row index)
+ *   %r13d - j (pixel column index)
+ *   %r14 - pointer to input Image
+ *   %r15 - pointer to output Image
+ *   %rbx - computed pixel fade factor (row factor * col factor)
+ *
+ * Stack memory:
+ *   -4(%rbp)  - current pixel value
+ *   -8(%rbp)  - pixel r component value (from get_r)
+ *   -12(%rbp) - pixel g component value (from get_g)
+ *   -16(%rbp) - pixel b component value (from get_b)
+ *   -20(%rbp) - pixel a component value (from get_a)
+ *   -24(%rbp) - computed pixel index
+ *   -32(%rbp) - computed row factor (from gradient fn)
  */
 ```
 
@@ -819,9 +831,9 @@ access them, it is easy to see their values. In particular, if all of the
 local variables are the same size and type (e.g., they are all
 4-byte integers), then you can think of them as an array.
 For example, in [the comment above about local variable allocation](#register-memory-comment),
-there are 6 local variables allocated in stack memory, each of which
-is a 4 byte integer value. We can see all of the values at once
-with the `gdb` comamnd
+there are 7 local variables allocated in stack memory, six of which
+are 4 byte integer values, and one of which is an 8 byte integer value.
+We can see the six four-byte values at once with the `gdb` comamnd
 
 ```
 print (unsigned [6]) *((unsigned *)($rbp - 24))
@@ -831,11 +843,19 @@ Here we are pretending that these variables belong to the `unsigned` type,
 which is the same as the `uint32_t` type.  The `(unsigned [6])` at the
 beginning of the expression tells `gdb` that we are interpreting the
 memory as an array of 6 `unsigned` elements. We use the expression
-`$rbp - 24` to compute the address of the beginning of the local variable
-area, because it is 24 bytes in size, and `%rbp` points to the "top"
+`$rbp - 24` to compute the address of the beginning of the
+area containing the 4-byte variables,
+because it is 24 bytes in size, and `%rbp` points to the "top"
 of the area. Note that the `print` command will show the values of the local
 variables starting with the local variable with the "lowest" address, i.e.,
 the one referred to as `-24(%rbp)`.
+
+We can see the 8 byte value in memory (at offset -32 from `%rbp`)
+using the `gdb` command
+
+```
+print (unsigned long) *((unsigned long)($rbp - 32))
+```
 
 ## Submitting
 

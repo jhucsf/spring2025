@@ -38,6 +38,9 @@ Gradescope.
 
 ## News
 
+* **Feb 7** — [Assignment 2](assign/assign02.html) has been updated with a
+  better example of a [comment to show register use and layout of variables
+  in the stack frame](assign/assign02.html#register-memory-comment).
 * **Feb 6** — [Assignment 2](assign/assign02.html) has been updated to
   correct an error in the formula for the gradient function in
   [the `fade` transformation](assign/assign02.html#the-fade-transformation).
