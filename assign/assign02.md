@@ -3,6 +3,12 @@ layout: mathjax
 title: "Assignment 2: Image Processing"
 ---
 
+<!--
+Note for future semesters:
+have students write their own test functions rather than
+modifying existing ones when they add unit tests.
+-->
+
 **Due**:
 
 * Milestone 1 due **Friday, Feb 14th** by 11 pm

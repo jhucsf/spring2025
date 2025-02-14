@@ -3,6 +3,12 @@ layout: mathjax
 title: "Assignment 1: Big integers"
 ---
 
+<!--
+Note for future semesters:
+have students write their own test functions rather than
+modifying existing ones when they add unit tests.
+-->
+
 Milestone 1: due Wednesday Jan 29th by 11pm
 
 Milestone 2: due Wednesday Feb 5th by 11pm
