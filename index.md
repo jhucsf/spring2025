@@ -38,6 +38,8 @@ Gradescope.
 
 ## News
 
+* **Feb 22** — The due date for MS3 of [Assignment 2](assign/assign02.html)
+  has been changed to Friday, Feb 28th.
 * **Feb 7** — [Assignment 2](assign/assign02.html) has been updated with a
   better example of a [comment to show register use and layout of variables
   in the stack frame](assign/assign02.html#register-memory-comment).

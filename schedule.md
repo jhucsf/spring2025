@@ -42,8 +42,8 @@ Feb 17 | [Code and data interactions, buffer overflows](lectures/lecture11-publi
 Feb 19 | Program optimization (basic techniques): see Canvas for slides | *CSAPP* 5.1–5.8 | 
 Feb 21 | [Pipelines](lectures/lecture13-public.pdf) | <i>P&amp;H</i> 4.5–4.7 | [A2](assign/assign02.html) MS2 due
 Feb 24 | Program optimization (ILP, memory, profiling): see Canvas for slides | *CSAPP* 5.9–5.14 | 
-Feb 26 | [Memory hierarchy](lectures/lecture15-public.pdf) | *CSAPP* 6.1–6.3 | [A2](assign/assign02.html) MS3 due
-Feb 28 | Exam 1 review session |  | 
+Feb 26 | [Memory hierarchy](lectures/lecture15-public.pdf) | *CSAPP* 6.1–6.3 | 
+Feb 28 | Exam 1 review session |  | [A2](assign/assign02.html) MS3 due
 Mar 3 | **Exam 1** (in class) |  | 
 Mar 5 | [Cache policies](lectures/lecture16-public.pdf) | *CSAPP* 6.4 | 
 Mar 7 | Caches and program execution: see Canvas for slides | *CSAPP* 6.5 | <span class='tentative'>A3 MS1 due</span>

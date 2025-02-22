@@ -13,13 +13,15 @@ modifying existing ones when they add unit tests.
 
 * Milestone 1 due **Friday, Feb 14th** by 11 pm
 * Milestone 2 due **Friday, Feb 21st** by 11 pm
-* Milestone 3 due **Wednesday, Feb 26th** by 11 pm
+* Milestone 3 due **Friday, Feb 28th** by 11 pm
 
 *Update 2/6*: Corrected an error in the formula for the
 gradient function in [the `fade` transformation](#the-fade-transformation).
 
 *Update 2/7*: Improved example of a [comment to show register use and
 layout of variables in the stack frame](#register-memory-comment).
+
+*Update 2/22*: Changed MS3 due date to Friday, Feb 28th.
 
 This is a **pair** assignment, so you may work with one partner.
 
