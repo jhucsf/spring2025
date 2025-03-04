@@ -38,6 +38,9 @@ Gradescope.
 
 ## News
 
+* **Mar 4** — [Assignment 3](assign/assign03.html) has three milestones,
+  due Friday, March 7th, Wednesday, March 26th, and Wednesday, April 2nd,
+  respectively.
 * **Feb 22** — The due date for MS3 of [Assignment 2](assign/assign02.html)
   has been changed to Friday, Feb 28th.
 * **Feb 7** — [Assignment 2](assign/assign02.html) has been updated with a
