@@ -44,3 +44,4 @@ Assignment | Type | Due
 ---------- | :--: | ---
 [Assignment 1: Big Integers](assign/assign01.html) | Pair | MS1 due Wed, Jan 29th<br>MS2 due Wed, Feb 5th
 [Assignment 2: Image Processing](assign/assign02.html) | Pair | MS1 due Fri, Feb 14th<br>MS2 due Fri, Feb 21st<br>MS3 due Fri, Feb 28th
+[Assignment 3: Cache Simulator](assign/assign03.html) | Pair | MS1 due Fri, Mar 7th<br>MS2 due Wed, Mar 26th<br> MS3 due Wed, Apr 2nd
