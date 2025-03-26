@@ -38,6 +38,9 @@ Gradescope.
 
 ## News
 
+* **Mar 26** — Exam 2 will take place in class on Friday, April 4th.
+  Review materials are available on the [Resources](resources.html) page.
+  A review session will take place in class on Wednesday, April 2nd.
 * **Mar 4** — [Assignment 3](assign/assign03.html) has three milestones,
   due Friday, March 7th, Wednesday, March 26th, and Wednesday, April 2nd,
   respectively.
