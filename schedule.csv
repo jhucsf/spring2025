@@ -30,7 +30,7 @@ Mar 31,"Memory mapping, dynamic memory allocation",lectures/lecture24-public.pdf
 Apr 2,"Exam 2 review session",,,,"[A3](assign/assign03.html) MS3 due"
 Apr 4,"**Exam 2** (in class)",
 Apr 7,"Unix I/O, files",lectures/lecture25-public.pdf,,*CSAPP* 10.1–10.11,
-Apr 9,"Networks, Internet Protocol",lectures/lecture26-public.pdf,,*CSAPP* 11.1–11.3,"<span class='tentative'>A4 due</span>"
+Apr 9,"Networks, Internet Protocol",lectures/lecture26-public.pdf,,*CSAPP* 11.1–11.3,"[A4](assign/assign04.html) due"
 Apr 11,"Sockets, Application Protocols",lectures/lecture27-public.pdf,sockets.zip,*CSAPP* 11.4,
 Apr 14,"Network applications, HTTP",lectures/lecture28-public.pdf,"[webclient.zip (example code)](lectures/webclient.zip), [webserver.zip (example code)](lectures/webserver.zip)",*CSAPP* 11.4–11.6,
 Apr 16,"Concurrency with pthreads",lectures/lecture29-public.pdf,mt_webserver.zip,*CSAPP* 12.3,
