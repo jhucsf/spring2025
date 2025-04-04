@@ -7,6 +7,8 @@ title: "Assignment 4: Parallel Quicksort"
 
 Assignment type: **Pair**, you may work with one partner
 
+*Update 4/4*: Fix typo in `mmap` code example
+
 # Parallel Quicksort
 
 In this assignment, you will
@@ -163,7 +165,7 @@ int64_t *arr;
 arr = mmap( NULL, file_size_in_bytes, PROT_READ | PROT_WRITE,
             MAP_SHARED, fd, 0 );
 close( fd ); // file can be closed now
-if ( data == MAP_FAILED ) {
+if ( arr == MAP_FAILED ) {
     // handle mmap error and exit
 }
 // *arr now behaves like a standard array of int64_t.
