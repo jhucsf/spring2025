@@ -38,6 +38,9 @@ Gradescope.
 
 ## News
 
+* **Apr 9** — [Assignment 5](assign/assign05.html) has two milestones, due
+  Friday, April 18th, and Monday, April 28th, respectively. Note that you
+  may **not** use late hours on MS2: please plan accordingly.
 * **Apr 2** — [Assignment 4](assign/assign04.html) is due at 11 pm on
   Wednesday, Apr 9th.
 * **Mar 26** — Exam 2 will take place in class on Friday, April 4th.

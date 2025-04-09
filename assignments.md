@@ -46,3 +46,4 @@ Assignment | Type | Due
 [Assignment 2: Image Processing](assign/assign02.html) | Pair | MS1 due Fri, Feb 14th<br>MS2 due Fri, Feb 21st<br>MS3 due Fri, Feb 28th
 [Assignment 3: Cache Simulator](assign/assign03.html) | Pair | MS1 due Fri, Mar 7th<br>MS2 due Wed, Mar 26th<br> MS3 due Wed, Apr 2nd
 [Assignment 4: Parallel Quick Sort](assign/assign04.html) | Pair | Wed, Apr 9th
+[Assignment 5: Chat Server](assign/assign05.html) | Pair | MS1 due Fri, Apr 18th<br>MS2 due Mon, Apr 28th (no late hours)
