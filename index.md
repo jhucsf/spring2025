@@ -38,6 +38,9 @@ Gradescope.
 
 ## News
 
+* **Apr 21** — Exam 3 will take place on Tuesday, May 6th at 6pm in Remsen 101.
+  Review materials are available on the [Resources](resources.html) page.
+  A review session will take place in class on Monday, April 28th.
 * **Apr 9** — [Assignment 5](assign/assign05.html) has two milestones, due
   Friday, April 18th, and Monday, April 28th, respectively. Note that you
   may **not** use late hours on MS2: please plan accordingly.
